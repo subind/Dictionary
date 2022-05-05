@@ -2,6 +2,7 @@
 .gradle
 /local.properties
 /.idea/caches
+/.idea/
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
@@ -12,4 +13,5 @@
 /captures
 .externalNativeBuild
 .cxx
+/app/release
 local.properties
