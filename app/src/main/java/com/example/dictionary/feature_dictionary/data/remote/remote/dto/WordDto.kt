@@ -1,6 +1,6 @@
 package com.example.dictionary.feature_dictionary.data.remote.remote.dto
 
-import com.example.dictionary.feature_dictionary.domain.model.Word
+import com.example.dictionary.feature_dictionary.data.remote.local.entities.WordEntity
 
 data class WordDto(
     val license: LicenseDto,
@@ -10,10 +10,8 @@ data class WordDto(
     val sourceUrls: List<String>,
     val word: String
 ) {
-    fun toWord(): Word {
-        return Word(
-            meanings = meanings.map { it.toMeaning() },
-            sourceUrls = sourceUrls,
+    fun toWordEntity(): WordEntity {
+        return WordEntity(
             word = word
         )
     }

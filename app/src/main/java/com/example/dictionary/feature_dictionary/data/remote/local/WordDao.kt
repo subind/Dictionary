@@ -9,10 +9,14 @@ import com.example.dictionary.feature_dictionary.data.remote.local.entities.Word
 @Dao
 interface WordDao {
 
+    //The reason the param is a list is because the server returns a list of word objects
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertWord(word: WordEntity)
+    suspend fun insertWord(word: List<WordEntity>)
 
-    @Query("SELECT * FROM WordEntity")
-    fun fetchWord(): WordEntity
+    @Query("SELECT * FROM WordEntity WHERE word LIKE '%' || :word || '%'")
+    suspend fun fetchWord(word: String): List<WordEntity>
+
+    @Query("DELETE FROM WordEntity WHERE word IN(:words)")
+    suspend fun deleteWords(words: List<String>)
 
 }
