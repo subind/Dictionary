@@ -4,7 +4,7 @@ import com.example.dictionary.core.util.Resource
 import com.example.dictionary.feature_dictionary.data.remote.local.WordDb
 import com.example.dictionary.feature_dictionary.data.remote.remote.NetworkService
 import com.example.dictionary.feature_dictionary.domain.model.Word
-import com.example.dictionary.feature_dictionary.domain.repository.RetrieveWord
+import com.example.dictionary.feature_dictionary.domain.repository.RetrieveWordRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -12,10 +12,10 @@ import kotlinx.coroutines.flow.flow
  * Our approach is to store the data received from server in a local database & data to be displayed
  * in the UI will be fetched only from local db (SingleSourceOfTruth).
  */
-class RetrieveWordImpl(
+class RetrieveWordRepoImpl(
     private val api: NetworkService,
     private val db: WordDb
-): RetrieveWord {
+): RetrieveWordRepo {
 
     private val dbOperations = db.wordDao()
     private lateinit var words: List<Word>

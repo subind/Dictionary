@@ -4,7 +4,7 @@ import com.example.dictionary.core.util.Resource
 import com.example.dictionary.feature_dictionary.domain.model.Word
 import kotlinx.coroutines.flow.Flow
 
-interface RetrieveWord {
+interface RetrieveWordRepo {
 
     fun retrieveWord(word: String): Flow<Resource<List<Word>>>
 
