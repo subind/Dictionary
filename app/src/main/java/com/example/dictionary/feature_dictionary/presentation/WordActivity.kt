@@ -7,27 +7,25 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dictionary.R
 import com.example.dictionary.feature_dictionary.domain.model.Word
-import com.example.dictionary.feature_dictionary.domain.use_case.FetchWord
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class WordActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var editText: EditText
     private lateinit var progressLoader: ProgressBar
-    private lateinit var fetchWord: FetchWord
-
-    private val viewModel: WordViewModel by viewModels<WordViewModel> {
-        ViewModelFactory(fetchWord)
-    }
+    @Inject
+    lateinit var viewModel: WordViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,8 +50,8 @@ class WordActivity : AppCompatActivity() {
 
     private fun setDataToRecyclerView(words: List<Word>) {
         val adapter = WordRecyclerAdapter(words)
+        recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
-        recyclerView.adapter = WordRecyclerAdapter(words)
     }
 
     private fun initObservers() {

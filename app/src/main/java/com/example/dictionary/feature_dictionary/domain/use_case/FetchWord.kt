@@ -5,8 +5,9 @@ import com.example.dictionary.feature_dictionary.domain.model.Word
 import com.example.dictionary.feature_dictionary.domain.repository.RetrieveWordRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class FetchWord(private val retrieveWordRepo: RetrieveWordRepo) {
+class FetchWord @Inject constructor(private val retrieveWordRepo: RetrieveWordRepo) {
 
     fun fetch(word: String): Flow<Resource<List<Word>>> {
         if (word.isNotBlank()) {

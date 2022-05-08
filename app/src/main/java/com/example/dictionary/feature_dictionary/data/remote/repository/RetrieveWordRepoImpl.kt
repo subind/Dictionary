@@ -7,12 +7,14 @@ import com.example.dictionary.feature_dictionary.domain.model.Word
 import com.example.dictionary.feature_dictionary.domain.repository.RetrieveWordRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
 /**
  * Our approach is to store the data received from server in a local database & data to be displayed
  * in the UI will be fetched only from local db (SingleSourceOfTruth).
  */
-class RetrieveWordRepoImpl(
+class RetrieveWordRepoImpl
+@Inject constructor(
     private val api: NetworkService,
     private val db: WordDb
 ): RetrieveWordRepo {

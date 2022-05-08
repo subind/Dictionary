@@ -9,8 +9,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class WordViewModel(private var fetchWordUseCase: FetchWord): ViewModel() {
+class WordViewModel @Inject constructor(private var fetchWordUseCase: FetchWord): ViewModel() {
 
     /*private var _searchQueryStateFlow = MutableStateFlow<String>("")
     var searchQueryStateFlow: MutableStateFlow<String> = _searchQueryStateFlow*/
