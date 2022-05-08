@@ -12,8 +12,8 @@ import kotlinx.coroutines.launch
 
 class WordViewModel(private var fetchWordUseCase: FetchWord): ViewModel() {
 
-    private val _searchQueryStateFlow = MutableStateFlow<String>("")
-    val searchQueryStateFlow: StateFlow<String> = _searchQueryStateFlow
+    /*private var _searchQueryStateFlow = MutableStateFlow<String>("")
+    var searchQueryStateFlow: MutableStateFlow<String> = _searchQueryStateFlow*/
 
     private val _wordsStateFlow = MutableStateFlow<List<Word>>(emptyList())
     val wordsStateFlow: StateFlow<List<Word>> = _wordsStateFlow
@@ -27,7 +27,7 @@ class WordViewModel(private var fetchWordUseCase: FetchWord): ViewModel() {
     private var searchJob: Job? = null
 
     fun search(query: String) {
-        _searchQueryStateFlow.value = query
+        //_searchQueryStateFlow.value = query
         searchJob?.cancel()
         searchJob = viewModelScope.launch(Dispatchers.IO) {
             fetchWordUseCase.fetch(query).onEach { result ->
@@ -46,7 +46,5 @@ class WordViewModel(private var fetchWordUseCase: FetchWord): ViewModel() {
         }
 
     }
-
-
 
 }
