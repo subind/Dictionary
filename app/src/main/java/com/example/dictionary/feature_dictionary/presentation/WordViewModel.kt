@@ -7,11 +7,12 @@ import com.example.dictionary.feature_dictionary.domain.model.Word
 import com.example.dictionary.feature_dictionary.domain.use_case.FetchWord
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class WordViewModel @Inject constructor(private var fetchWordUseCase: FetchWord): ViewModel() {
+class WordViewModel @Inject constructor(private var fetchWordUseCase: FetchWord) : ViewModel() {
 
     /*private var _searchQueryStateFlow = MutableStateFlow<String>("")
     var searchQueryStateFlow: MutableStateFlow<String> = _searchQueryStateFlow*/
@@ -31,7 +32,8 @@ class WordViewModel @Inject constructor(private var fetchWordUseCase: FetchWord)
         //_searchQueryStateFlow.value = query
         searchJob?.cancel()
         searchJob = viewModelScope.launch(Dispatchers.IO) {
-            fetchWordUseCase.fetch(query).onEach { result ->
+            delay(500L)
+            fetchWordUseCase.fetch(query).collectLatest { result ->
                 when(result) {
                     is Resource.Success -> {
                         _wordsStateFlow.value = result.data ?: emptyList()
@@ -45,7 +47,6 @@ class WordViewModel @Inject constructor(private var fetchWordUseCase: FetchWord)
                 }
             }
         }
-
     }
 
 }
