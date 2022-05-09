@@ -12,7 +12,8 @@ data class WordDto(
 ) {
     fun toWordEntity(): WordEntity {
         return WordEntity(
-            word = word
+            word = word,
+            meanings = meanings.map { it.toMeaning() }
         )
     }
 }
