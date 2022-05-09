@@ -13,6 +13,7 @@ class WordRecyclerAdapter(private val words: List<Word>): RecyclerView.Adapter<W
 
     class WordRecyclerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val tvWord: TextView = itemView.findViewById(R.id.tv_word)
+        val tvMeaning: TextView = itemView.findViewById(R.id.tv_meaning)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordRecyclerViewHolder {
@@ -22,6 +23,7 @@ class WordRecyclerAdapter(private val words: List<Word>): RecyclerView.Adapter<W
 
     override fun onBindViewHolder(holder: WordRecyclerViewHolder, position: Int) {
         holder.tvWord.text = words[position].word
+        holder.tvMeaning.text = words?.get(position)?.meanings?.map { it.definitions?.map { it.definition ?: "" } ?: emptyList()}.toString()
     }
 
     override fun getItemCount(): Int = words.size
