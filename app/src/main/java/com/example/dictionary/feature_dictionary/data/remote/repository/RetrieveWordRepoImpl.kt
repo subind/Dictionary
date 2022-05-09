@@ -31,7 +31,7 @@ class RetrieveWordRepoImpl
             if(words.isEmpty()) {
                 try {
                     val wordEntity = api.getNetworkService().getWord(wordToFetch).map { it.toWordEntity() }
-                    dbOperations.deleteWords(wordEntity.map { it.word })
+                    dbOperations.deleteWords(wordEntity.map { it.word ?: "" })
                     dbOperations.insertWord(wordEntity)
                     words = dbOperations.fetchWord(wordToFetch).map { it.toWord() }
                 }catch (e: Exception) {

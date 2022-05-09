@@ -7,8 +7,8 @@ import com.example.dictionary.feature_dictionary.domain.model.Word
 
 @Entity
 data class WordEntity(
-    val word: String,
-    val meanings: List<Meaning>,
+    val word: String?,
+    val meanings: List<Meaning>?,
     @PrimaryKey
     val id: Int? = null
 ) {

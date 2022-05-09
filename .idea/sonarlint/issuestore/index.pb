@@ -6,35 +6,7 @@ Japp/src/androidTest/java/com/example/dictionary/ExampleInstrumentedTest.kt,e/d
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-‘
-aapp/src/main/java/com/example/dictionary/feature_dictionary/data/remote/remote/dto/PhoneticDto.kt,d/d/dda671c8c18be6043ef9a6299041e9f03841d3bc
-
-`app/src/main/java/com/example/dictionary/feature_dictionary/data/remote/remote/dto/LicenseDto.kt,5/8/586338283ed634450e4d48dd7f25cfaa23ca8237
-“
-capp/src/main/java/com/example/dictionary/feature_dictionary/data/remote/remote/dto/DefinitionDto.kt,e/c/ecf88002ceb47bd0d95243ce0cd15dd0f1fdda62
-†
-Vapp/src/main/java/com/example/dictionary/feature_dictionary/domain/model/Definition.kt,c/d/cd08fa1abf3e01fbb12e0361b0cd60787c58151c
-
-`app/src/main/java/com/example/dictionary/feature_dictionary/data/remote/remote/dto/MeaningDto.kt,3/9/390dfe1a7afb3ac17a9fbbb5e4125b50ceff0700
 n
 >app/src/main/java/com/example/dictionary/core/util/Resource.kt,8/b/8bd6b46d597e6e84e1f7132182058b609d0c8c0d
-Œ
-\app/src/main/java/com/example/dictionary/feature_dictionary/presentation/ViewModelFactory.kt,6/9/69cd6a6be5073f223b39ccc30b356a3eb562ff71
-‘
-aapp/src/main/java/com/example/dictionary/feature_dictionary/domain/repository/RetrieveWordRepo.kt,c/4/c4654b2d89012c8a4e3a2f15a897e8de3ccbea83
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-ˆ
-Xapp/src/main/java/com/example/dictionary/feature_dictionary/domain/use_case/FetchWord.kt,5/9/59b5bc29f7cf4310ef07c9fc7993f27d0e5bf34f
-‰
-Yapp/src/main/java/com/example/dictionary/feature_dictionary/presentation/WordViewModel.kt,6/5/65d7d34ea1d8bcbfe88934bbca2af6cdcdfe83c5
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
-ƒ
-Sapp/src/main/java/com/example/dictionary/feature_dictionary/domain/model/Meaning.kt,4/9/49a44f6f79835ccdbafa546766b5975754ae942e
-ˆ
-Xapp/src/main/java/com/example/dictionary/feature_dictionary/data/remote/local/WordDao.kt,5/d/5dd1f7c83bf6f80dc17b7ceb64a59b0908f50de7
-ˆ
-Xapp/src/main/java/com/example/dictionary/feature_dictionary/presentation/WordActivity.kt,9/5/95dab679f132e582c14b00e4a742d0490cdcd630
-•
-eapp/src/main/java/com/example/dictionary/feature_dictionary/data/remote/remote/RetrofitServiceImpl.kt,4/b/4b0910f6e544fa27efd20a3c6c26676551a6ea87
+‡
+Wapp/src/main/java/com/example/dictionary/feature_dictionary/data/remote/local/WordDb.kt,d/a/da82b4c39a82b82da222bfb0d1c292dc83086a52
